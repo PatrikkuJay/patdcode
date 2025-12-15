@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PatDcode</title>
+    <link rel="icon" type="image/x-icon" href="logoPatDcode.png">
+    <link rel="stylesheet" href="daystyles.css">
+</head>
+<body>
+    <main>
+      <div class="logo-container">
+        <a href="index.html">
+          <img class="logo" src="logoPatDcode.png" alt="logo">
+        </a>
+      </div>
+        <ul class='slider'>
+             <li class='item' style="background-image: url(day3/day3pictur1.jpg)">
+                <div class='content'>
+                <h2 class='title'>"Day 3 – November 14 | Panglao Vista Suites"</h2>
+                <p class='description'>
+                    We checked in at Panglao Vista Suites, settling into the accommodations before heading out for dinner.
+                </p>
+                <div id="moreDescription1" style="display: none;">
+                    <h3>Journey Reflection</h3>
+                        <p>
+                            This stop offered a moment of rest and comfort, preparing us for the next experiences on the tour.
+                        </p>
+                </div>
+                <button onclick="toggleContent('moreDescription5', this)">Read More</button>
+                </div>
+            </li>
+              <li class='item' style="background-image: url(day3/day3pictur2.jpg)">
+                <div class='content'>
+                  <h2 class='title'>"Day 3 – Nov 14 | Breakfast at Bai Hotel"</h2>
+                  <p class='description'>
+                    Morning breakfast before travel.
+                </p>
+                    <p>This prepared us for travel to Bohol.</p>
+
+                </div>
+              </li>
+          <li class='item' style="background-image: url(day3/day3pictur3.jpg)">
+            <div class='content'>
+              <h2 class='title'>"Day 3 – Nov 14 | Mata Technologies"</h2>
+                  <p class='description'>
+                    We learned about virtual reality mapping and digital tourism solutions.
+                </p>
+                 <div id="moreDescription3" style="display: none;">
+                  <h3>Journey Reflection</h3>
+                    <p>
+                        This visit showed me how technology can support industries like tourism
+                        and real estate, proving that IT is not limited to traditional software
+                        development.
+                    </p>
+              </div>
+              <button onclick="toggleContent('moreDescription3', this)">Read More</button>              
+            </div>
+          </li>
+          <li class='item' style="background-image: url(day3/day3pictur4.jpg)">
+            <div class='content'>
+              <h2 class='title'>"Day 3 – November 14 | Somac Korean Buffet, SM Seaside"</h2>
+              <p class='description'> 
+                We dined at Somac Korean Buffet in SM Seaside, enjoying authentic Korean dishes in a lively setting.
+                  </p>
+                  <div id="moreDescription4" style="display: none;">
+                    <h3>Journey Reflection</h3>
+                    <p>
+                        The experience highlighted the richness of Korean cuisine and showed how food can be both cultural learning and enjoyment.
+                    </p>
+                </div>
+                <button onclick="toggleContent('moreDescription4', this)">Read More</button>
+            </div>
+          </li>   
+        </ul>
+        <nav class='nav'>
+          <ion-icon class='btn prev' name="arrow-back-outline"></ion-icon>
+          <ion-icon class='btn next' name="arrow-forward-outline"></ion-icon>
+        </nav>
+      </main>
+      
+      <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+      <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+      <script>
+function toggleContent(id, button) {
+    var content = document.getElementById(id);
+
+    if (content.style.display === "none" || content.style.display === "") {
+        content.style.display = "block";
+        content.style.opacity = 1;
+        button.textContent = "Read Less";
+    } else {
+        content.style.display = "none";
+        content.style.opacity = 0;
+        button.textContent = "Read More";
+    }
+}
+
+
+
+const slider = document.querySelector('.slider');
+
+function activate(e) {
+  const items = document.querySelectorAll('.item');
+  e.target.matches('.next') && slider.append(items[0])
+  e.target.matches('.prev') && slider.prepend(items[items.length -1]);
+}
+
+document.addEventListener('click',activate,false);
+      </script>
+</body>
+</html>

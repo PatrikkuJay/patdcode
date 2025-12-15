@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PatDcode</title>
+    <link rel="icon" type="image/x-icon" href="logoPatDcode.png">
+    <link rel="stylesheet" href="daystyles.css">
+</head>
+<body>
+    <main>
+      <div class="logo-container">
+        <a href="index.html">
+          <img class="logo" src="logoPatDcode.png" alt="logo">
+        </a>
+      </div>
+        <ul class='slider'>
+            <li class='item' style="background-image: url(day2/day2pictur1.jpg)">
+                <div class='content'>
+                <h2 class='title'>"Day 2 – November 13 | Bai Hotel"</h2>
+                <p class='description'>
+                    We returned to Bai Hotel after the day’s visits, with the rest of the time free to relax.
+                </p>
+                <div id="moreDescription1" style="display: none;">
+                    <h3>Journey Reflection</h3>
+                    <p>
+                    This pause offered a chance to recharge, reflect on the day’s learnings, and enjoy quiet moments with the group.
+                    </p>
+                </div>
+                <button onclick="toggleContent('moreDescription6', this)">Read More</button>
+                </div>
+            </li>
+              <li class='item' style="background-image: url(day2/day2pictur2.jpg)">
+                <div class='content'>
+                  <h2 class='title'>"Day 2 – Nov 13 | Breakfast at Bai Hotel"</h2>
+                  <p class='description'>
+                    We started our second day with a breakfast buffet at Cafe Bai Hotel.
+                </p>
+                <div id="moreDescription2" style="display: none;">
+                  <h3>Journey Reflection</h3>
+                    <p>
+                        Having breakfast together at Cafe Bai prepared us for a busy day of
+                        company visits. It was a good opportunity to plan our day, share
+                        expectations, and get ready for our learning activities.
+                    </p>
+              </div>
+              <button onclick="toggleContent('moreDescription2', this)">Read More</button>
+                </div>
+              </li>
+          <li class='item' style="background-image: url(day2/day2pictur3.jpg)">
+            <div class='content'>
+              <h2 class='title'>"Day 2 – Nov 13 | RIVAN IT Cebu"</h2>
+                  <p class='description'>
+                    We attended a networking and cybersecurity session at RIVAN IT Cebu.
+                </p>
+                 <div id="moreDescription3" style="display: none;">
+                  <h3>Journey Reflection</h3>
+                    <p>
+                        This session made me realize the importance of building strong technical
+                        foundations and choosing a specialization early in my IT career.
+                    </p>
+              </div>
+              <button onclick="toggleContent('moreDescription3', this)">Read More</button>              
+            </div>
+          </li>
+          <li class='item' style="background-image: url(day2/day2pictur4.jpg)">
+            <div class='content'>
+              <h2 class='title'>"Day 2 – Nov 13 | Buffet 101"</h2>
+              <p class='description'> 
+                We visited Buffet 101, a lively restaurant offering a wide range of international dishes and a welcoming atmosphere.
+                  </p>
+                  <div id="moreDescription4" style="display: none;">
+                    <h3>Journey Reflection</h3>
+                    <p>
+                        The experience showed how food connects people and cultures, reminding me that learning also happens in shared moments outside the classroom.
+                    </p>
+                </div>
+                <button onclick="toggleContent('moreDescription4', this)">Read More</button>
+            </div>
+          </li>
+          <li class='item' style="background-image: url(day2/day2pictur5.jpg)">
+            <div class='content'>
+              <h2 class='title'>"Day 2 – Nov 13 | Dynata Philippines"</h2>
+              <p class='description'>
+                We visited Dynata Philippines, a global leader in data and research solutions, where we learned about survey operations and market insights.
+              </p>
+              <div id="moreDescription5" style="display: none;">
+                <h3>Journey Reflection</h3>
+                    <p>
+                        The visit highlighted the importance of data in decision‑making and showed how research connects businesses with people’s real experiences.
+                    </p>
+            </div>
+            <button onclick="toggleContent('moreDescription5', this)">Read More</button>
+            </div>
+          </li>
+        </ul>
+        <nav class='nav'>
+          <ion-icon class='btn prev' name="arrow-back-outline"></ion-icon>
+          <ion-icon class='btn next' name="arrow-forward-outline"></ion-icon>
+        </nav>
+      </main>
+      
+      <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+      <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+      <script>
+function toggleContent(id, button) {
+    var content = document.getElementById(id);
+
+    if (content.style.display === "none" || content.style.display === "") {
+        content.style.display = "block";
+        content.style.opacity = 1;
+        button.textContent = "Read Less";
+    } else {
+        content.style.display = "none";
+        content.style.opacity = 0;
+        button.textContent = "Read More";
+    }
+}
+
+
+
+const slider = document.querySelector('.slider');
+
+function activate(e) {
+  const items = document.querySelectorAll('.item');
+  e.target.matches('.next') && slider.append(items[0])
+  e.target.matches('.prev') && slider.prepend(items[items.length -1]);
+}
+
+document.addEventListener('click',activate,false);
+      </script>
+</body>
+</html>
